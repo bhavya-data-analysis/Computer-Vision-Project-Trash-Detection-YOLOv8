@@ -1,0 +1,11 @@
+# data
+dataset/images/
+dataset/labels/
+
+# training runs
+runs/
+
+# python
+__pycache__/
+*.pyc
+.env

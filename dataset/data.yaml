@@ -1,0 +1,15 @@
+# Absolute path to anchor all splits
+path: /Users/ompandya/Desktop/vision-playground/dataset
+train: images/train
+val: images/val
+test: images/val
+
+nc: 1
+names: ['trash']
+
+roboflow:
+  workspace: bhavya91p
+  project: waste-poidl
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/bhavya91p/waste-poidl/dataset/1
