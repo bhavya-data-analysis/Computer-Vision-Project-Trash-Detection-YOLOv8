@@ -1,0 +1,106 @@
+# 🗑️ Trash Detection using YOLOv8 (Computer Vision)
+
+## Overview
+This project implements an **end-to-end object detection pipeline** using **YOLOv8** to detect trash/waste in **real-world, cluttered outdoor scenes**.  
+The goal is to follow a **correct, industry-style workflow** rather than relying on toy or studio datasets.
+
+---
+
+## Key Objectives
+- Build a realistic **object detection pipeline**
+- Work with **messy, real-world images**
+- Apply proper **train/validation splits**
+- Understand **precision, recall, and mAP**
+- Create a **bootstrap model** for future dataset scaling
+
+---
+
+## Dataset
+- ~55 real-world trash images
+- Outdoor, cluttered environments
+- Manually annotated using **bounding boxes**
+- **80/20 train–validation split**
+  - Train: 49 images  
+  - Validation: 10 images
+- Single class:
+  - `trash`
+
+> Note: Images and labels are excluded from the repository to keep it lightweight.
+
+---
+
+## Model & Training
+- **Model:** YOLOv8n (Ultralytics)
+- **Framework:** PyTorch + Ultralytics YOLO
+- **Training Configuration:**
+  - Image size: `640`
+  - Epochs: `50`
+  - Device: CPU (Apple M1)
+- **Output:** Trained model weights (`best.pt`)
+
+---
+
+## Results (Baseline Model)
+Evaluation performed on the validation set:
+
+- **Precision:** High (predictions are usually correct)
+- **Recall:** Moderate (misses some trash objects)
+- **mAP@50:** ~0.54
+
+This model is intended as a **baseline / bootstrap model**, not a final production system.
+
+---
+
+## Project Structure
+```
+vision-playground/
+├── dataset/
+│ └── data.yaml
+├── runs/
+│ └── detect/
+│ └── train/
+│ └── weights/
+│ └── best.pt
+├── README.md
+└── .gitignore
+```
+
+---
+
+## Training Command
+
+```bash
+yolo task=detect mode=train model=yolov8n.pt data=dataset/data.yaml epochs=50 imgsz=640
+```
+
+---
+
+## Inference Example
+
+```bash
+yolo task=detect mode=predict \
+  model=runs/detect/train/weights/best.pt \
+  source=path/to/images
+```
+
+
+## Key Learnings
+- YOLO reports **validation metrics only**, not training image count
+- Epoch count should decrease as **dataset size increases**
+- CPU training is slow but sufficient for **pipeline validation**
+- Dataset quality matters more than excessive epochs
+
+---
+
+## Future Improvements
+- Expand dataset to **100–300 images**
+- Improve recall with more diverse trash scenarios
+- Retrain on **GPU** for faster iteration
+- Add **video-based inference** demo
+
+---
+
+## Author
+**Bhavya Pandya**  
+Graduate Student — Data Analytics  
+Computer Vision | Machine Learning | Applied AI
