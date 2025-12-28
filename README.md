@@ -93,7 +93,6 @@ yolo task=detect mode=predict \
 ---
 
 ## Future Improvements
-- Expand dataset to **100–300 images**
 - Improve recall with more diverse trash scenarios
 - Retrain on **GPU** for faster iteration
 - Add **video-based inference** demo
