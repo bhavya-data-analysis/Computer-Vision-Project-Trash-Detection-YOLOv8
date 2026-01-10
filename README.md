@@ -1,8 +1,8 @@
 # 🗑️ Trash Detection using YOLOv8 (Computer Vision)
 
 ## Overview
-This project implements an **end-to-end object detection pipeline** using **YOLOv8** to detect trash/waste in **real-world, cluttered outdoor scenes**.  
-The goal is to follow a **correct, industry-style workflow** rather than relying on toy or studio datasets.
+This project implements an **complete training-to-inference object detection workflow** using **YOLOv8** to detect trash/waste in **real-world, cluttered outdoor scenes**.  
+The goal is to follow a **correct, industry-aligned workflow principles** rather than relying on toy or studio datasets.
 
 ---
 
@@ -20,8 +20,6 @@ The goal is to follow a **correct, industry-style workflow** rather than relying
 - Outdoor, cluttered environments
 - Manually annotated using **bounding boxes**
 - **80/20 train–validation split**
-  - Train: 49 images  
-  - Validation: 10 images
 - Single class:
   - `trash`
 
